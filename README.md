@@ -1,158 +1,169 @@
-# 🎯 VisionAI — Advanced Object Detection & Tracking System
+<div align="center">
 
-> **CodeAlpha AI Internship | Task 4: Object Detection & Tracking**  
-> Production-grade AI surveillance system with real-time analytics dashboard
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00e5ff,100:7eff8a&height=200&section=header&text=VisionAI&fontSize=80&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=Advanced%20Object%20Detection%20%26%20Tracking%20System&descAlignY=55&descSize=18" width="100%"/>
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
-[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-orange)](https://ultralytics.com)
-[![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-red)](https://streamlit.io)
-[![FastAPI](https://img.shields.io/badge/API-FastAPI-green)](https://fastapi.tiangolo.com)
-[![Deep SORT](https://img.shields.io/badge/Tracking-DeepSORT-purple)](https://github.com/levan92/deep_sort_realtime)
+<br/>
+
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-FF6B35?style=for-the-badge&logo=pytorch&logoColor=white)](https://ultralytics.com)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![FastAPI](https://img.shields.io/badge/FastAPI-REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![DeepSORT](https://img.shields.io/badge/Deep_SORT-Tracking-7B2FBE?style=for-the-badge&logo=opencv&logoColor=white)](https://github.com/levan92/deep_sort_realtime)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.11-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org)
+
+<br/>
+
+> 🎓 **CodeAlpha AI Internship — Task 4: Object Detection & Tracking**
+> 
+> A production-grade AI surveillance system featuring real-time detection, multi-object tracking, analytics dashboard, REST API, and smart zone alerts.
+
+<br/>
 
 ---
 
-## 🚀 Features
+</div>
 
-### 🧠 Detection Models
-| Model | Speed | Accuracy | Use Case |
-|-------|-------|----------|----------|
-| YOLOv8n | ⚡⚡⚡⚡⚡ | ★★★ | Real-time webcam |
-| YOLOv8s | ⚡⚡⚡⚡ | ★★★★ | Balanced |
-| YOLOv8m | ⚡⚡⚡ | ★★★★ | General purpose |
-| YOLOv8l | ⚡⚡ | ★★★★★ | High accuracy |
-| YOLOv8x | ⚡ | ★★★★★ | Best accuracy |
+## 📸 Demo
 
-### 🎯 Tracking
-- **Deep SORT** with MobileNet feature embedder
-- **Persistent Track IDs** across frames
-- **Re-identification** (Deep SORT cosine distance)
-- **Motion trails** with fade effect
+<div align="center">
 
-### 📊 Analytics Dashboard
-- Real-time FPS counter
-- Per-class object counts (live)
-- FPS timeline chart
-- Session-wide class distribution (pie chart)
-- Cumulative detection log
+| Live Detection | Analytics Dashboard |
+|:-:|:-:|
+| Real-time YOLOv8 bounding boxes with Track IDs | Streamlit dashboard with live charts |
+| Deep SORT multi-object tracking | Class distribution & FPS timeline |
+| Motion trails & heatmap overlay | Alert log & CSV export |
 
-### 🌡 Heatmap System
-- Movement accumulation map
-- JET colormap overlay
-- Reset between sessions
+</div>
 
-### ⚠️ Alert System
-- Per-class alert triggers (configurable)
-- Zone violation alerts
-- Alert log with timestamps
-- Extensible callback architecture
+---
 
-### 🔐 Smart Zone Detection
-- Polygon-based restricted zones
-- Named zones with visual overlay
-- Real-time violation detection
-- Per-zone alert toggle
+## ✨ Features at a Glance
 
-### 📡 REST API (FastAPI)
-- `POST /detect/image` — detect objects in image
-- `GET /session/stats` — session statistics
-- `POST /session/export` — download logs
-- `POST /zones/add` — add detection zones
-- `POST /alerts/classes` — configure alerts
+<div align="center">
 
-### 🧾 Logging & Export
-- CSV log: every detection (timestamp, class, confidence, bbox, zone)
-- JSON session export
-- In-app data table with download button
+| 🧠 Detection | 🎯 Tracking | 📊 Analytics | ⚠️ Alerts |
+|:---:|:---:|:---:|:---:|
+| YOLOv8 n/s/m/l/x | Deep SORT | Live FPS counter | Per-class triggers |
+| 80 COCO classes | Persistent Track IDs | Class distribution | Zone violations |
+| Confidence slider | Motion trails | FPS timeline | Timestamped log |
+| IoU threshold | Re-identification | Session stats | Callback system |
 
-### ⚙️ Performance Controls
-- Frame skip (reduce processing load)
-- Resize percentage (speed/quality tradeoff)
-- Confidence & IoU threshold sliders
+| 🔐 Zones | 🌡️ Heatmap | 🧾 Logging | 🚀 Deployment |
+|:---:|:---:|:---:|:---:|
+| Polygon zones | Movement map | CSV export | Streamlit Cloud |
+| Named zones | JET colormap | JSON reports | HuggingFace |
+| Visual overlay | Per-session reset | In-app table | Docker ready |
+| Alert on entry | Cumulative | Download button | FastAPI REST |
+
+</div>
+
+---
+
+## 🧠 Model Comparison
+
+<div align="center">
+
+| Model | Speed | Accuracy | Best For |
+|:---:|:---:|:---:|:---:|
+| `YOLOv8n` | ⚡⚡⚡⚡⚡ | ★★★☆☆ | Real-time webcam |
+| `YOLOv8s` | ⚡⚡⚡⚡☆ | ★★★★☆ | Balanced use |
+| `YOLOv8m` | ⚡⚡⚡☆☆ | ★★★★☆ | General purpose |
+| `YOLOv8l` | ⚡⚡☆☆☆ | ★★★★★ | High accuracy |
+| `YOLOv8x` | ⚡☆☆☆☆ | ★★★★★ | Best accuracy |
+
+</div>
 
 ---
 
 ## 📁 Project Structure
 
 ```
-VisionAI/
-├── streamlit_app.py        # 🖥️  Main dashboard UI
-├── requirements.txt        # 📦 Dependencies
-├── README.md               # 📖 This file
-├── app/
-│   ├── detector.py         # 🧠 Core detection engine
-│   └── api.py              # 🌐 FastAPI REST endpoints
-├── utils/
-│   └── metrics.py          # 📏 mAP, Precision/Recall, FPS benchmark
-├── logs/                   # 📋 Auto-generated detection logs
-└── exports/                # 📤 Exported JSON reports
+CodeAlpha_ObjectDetection/
+│
+├── 📄 streamlit_app.py          ← Main dashboard UI (Streamlit)
+├── 📄 simple.py                 ← Lightweight OpenCV-only version
+├── 📄 requirements.txt          ← All dependencies
+├── 📄 Dockerfile                ← Container deployment
+├── 📄 README.md                 ← You are here
+│
+├── 📂 app/
+│   ├── 🧠 detector.py           ← Core engine (YOLOv8 + DeepSORT + Zones)
+│   └── 🌐 api.py                ← FastAPI REST endpoints
+│
+├── 📂 utils/
+│   └── 📏 metrics.py            ← mAP, Precision/Recall, FPS benchmark
+│
+├── 📂 logs/                     ← Auto-generated CSV detection logs
+└── 📂 exports/                  ← JSON session reports
 ```
 
 ---
 
 ## ⚡ Quick Start
 
-### 1. Install dependencies
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/SarfrazTechie/CodeAlpha_ObjectDetection.git
+cd CodeAlpha_ObjectDetection
+```
+
+### 2️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run the Streamlit Dashboard
+### 3️⃣ Run — choose your mode
+
+**🖥️ Full Dashboard (Streamlit):**
 ```bash
-streamlit run streamlit_app.py
+python -m streamlit run streamlit_app.py
 ```
 
-### 3. Run the REST API (optional)
+**⚡ Simple & Fast (OpenCV only):**
+```bash
+python simple.py
+```
+
+**🌐 REST API (FastAPI):**
 ```bash
 uvicorn app.api:app --host 0.0.0.0 --port 8000 --reload
-# API docs at: http://localhost:8000/docs
+# Swagger docs → http://localhost:8000/docs
 ```
 
 ---
 
 ## 🎮 How to Use
 
-1. **Select Model** from the sidebar (YOLOv8n is fastest for webcam)
-2. **Choose Source**: Webcam, Video File, or Image
-3. **Configure Detection**: Adjust confidence and IoU thresholds
-4. **Enable Tracking**: Toggle Deep SORT + motion trails
-5. **Set Alerts**: Select object classes to trigger alerts
-6. **Click ▶ START** to begin detection
-7. **View Analytics** in the right panel and bottom tabs
-8. **Export Logs** with the sidebar button
+```
+1. Select Model     →  YOLOv8n (fastest) to YOLOv8x (most accurate)
+2. Choose Source    →  Webcam / Video File / Image
+3. Set Thresholds   →  Confidence & IoU sliders
+4. Enable Tracking  →  Deep SORT + Motion Trails toggle
+5. Set Alerts       →  Pick classes to trigger alerts (person, car, etc.)
+6. Click ▶ START    →  Detection begins!
+7. View Analytics   →  Live charts update in real-time
+8. Export Logs      →  Download CSV with all detections
+```
 
 ---
 
-## 🔧 Extending the System
+## 🔌 REST API Endpoints
 
-### Add Custom Zone
-```python
-from app.detector import VisionAIDetector
-
-det = VisionAIDetector()
-# Define a polygon zone (pixel coordinates)
-det.zone_mgr.add_zone(
-    name="Restricted Area",
-    polygon=[[100,100],[400,100],[400,300],[100,300]],
-    color=(0,0,255),
-    alert=True
-)
+```http
+POST   /detect/image      →  Detect objects in uploaded image
+GET    /session/stats     →  Current session statistics
+POST   /session/export    →  Download JSON log
+POST   /zones/add         →  Add polygon detection zone
+DELETE /zones/{name}      →  Remove a zone
+POST   /alerts/classes    →  Set alert trigger classes
+GET    /models            →  List available models
 ```
 
-### Register Alert Callback
-```python
-def my_alert_handler(message, class_name, zone):
-    print(f"ALERT: {message}")
-    # Send email, SMS, webhook, etc.
-
-det.register_alert_callback(my_alert_handler)
-det.add_alert_class("person")
-```
-
-### Use via API
+**Example API call:**
 ```python
 import requests
 
-with open("image.jpg","rb") as f:
+with open("photo.jpg", "rb") as f:
     r = requests.post(
         "http://localhost:8000/detect/image",
         files={"file": f},
@@ -163,66 +174,105 @@ print(r.json())
 
 ---
 
-## 📊 Evaluation Metrics
+## 🔧 Advanced Usage
 
+### Add a Smart Zone
+```python
+from app.detector import VisionAIDetector
+
+det = VisionAIDetector()
+det.zone_mgr.add_zone(
+    name="Restricted Area",
+    polygon=[[100,100],[400,100],[400,300],[100,300]],
+    color=(0, 0, 255),
+    alert=True
+)
+```
+
+### Custom Alert Handler
+```python
+def my_alert(message, class_name, zone):
+    print(f"🚨 {message}")
+    # → Send email, SMS, webhook, etc.
+
+det.register_alert_callback(my_alert)
+det.add_alert_class("person")
+```
+
+### Evaluate Model Performance
 ```python
 from utils.metrics import evaluate_detections, fps_benchmark
 
-# Compute mAP
-results = evaluate_detections(ground_truth_boxes, predicted_boxes, iou_threshold=0.5)
+results = evaluate_detections(ground_truth, predictions, iou_threshold=0.5)
 print(f"mAP@0.5: {results['mAP']}")
 
-# FPS Benchmark
-benchmark = fps_benchmark(detector, test_frame, n_runs=50)
-print(f"Mean FPS: {benchmark['mean_fps']}")
+bench = fps_benchmark(detector, test_frame, n_runs=50)
+print(f"Mean FPS: {bench['mean_fps']}")
 ```
 
 ---
 
-## 🚢 Deployment
+## 🚢 Deployment Options
 
-### Streamlit Cloud
-```bash
-# Push to GitHub, connect repo at share.streamlit.io
-# Set requirements.txt — auto-deploys
-```
+<div align="center">
 
-### HuggingFace Spaces
-```bash
-# Create Space with Streamlit SDK
-# Upload files — auto-deploys
-```
+| Platform | Command | Free Tier |
+|:---:|:---:|:---:|
+| **Streamlit Cloud** | Push to GitHub → connect at share.streamlit.io | ✅ Yes |
+| **HuggingFace Spaces** | Create Space → Streamlit SDK → upload files | ✅ Yes |
+| **Docker** | `docker build -t visionai . && docker run -p 8501:8501 visionai` | ✅ Yes |
+| **AWS / Azure** | Deploy container to cloud VM | 💳 Paid |
 
-### Docker
-```dockerfile
-FROM python:3.10-slim
-WORKDIR /app
-COPY . .
-RUN pip install -r requirements.txt
-EXPOSE 8501
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501"]
-```
+</div>
 
 ---
 
-## 📚 Tech Stack
-- **YOLOv8** (Ultralytics) — State-of-the-art object detection
-- **Deep SORT** (deep-sort-realtime) — Multi-object tracking
-- **OpenCV** — Video capture & image processing
-- **Streamlit** — Interactive dashboard UI
-- **FastAPI** — REST API backend
-- **Plotly** — Real-time interactive charts
-- **Pandas** — Data logging & export
-- **NumPy** — Array & heatmap operations
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Library | Version | Purpose |
+|:---:|:---:|:---:|
+| `ultralytics` | 8.4+ | YOLOv8 detection engine |
+| `deep-sort-realtime` | 1.3+ | Multi-object tracking |
+| `opencv-python` | 4.11 | Video capture & processing |
+| `streamlit` | 1.46 | Interactive dashboard |
+| `fastapi` | 0.103+ | REST API backend |
+| `plotly` | 6.7 | Real-time charts |
+| `pandas` | 2.3 | Data logging & export |
+| `torch` | 2.7 | Deep learning backend |
+| `numpy` | 1.26 | Array operations |
+
+</div>
 
 ---
+
+## 📊 Evaluation Metrics Supported
+
+- ✅ **mAP** (mean Average Precision) @ IoU 0.5
+- ✅ **Precision & Recall** per class
+- ✅ **FPS Benchmark** (mean, min, max, std)
+- ✅ **Confusion Matrix** ready
+- ✅ **Detection Log** with timestamps & confidence scores
+
+---
+
+<div align="center">
 
 ## 👤 Author
-**[Your Name]**  
+
+**Sarfraz**  
 CodeAlpha AI Internship — Task 4  
-LinkedIn: [Your LinkedIn]  
-GitHub: [Your GitHub]
+
+[![GitHub](https://img.shields.io/badge/GitHub-SarfrazTechie-181717?style=for-the-badge&logo=github)](https://github.com/SarfrazTechie)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com)
+
+<br/>
 
 ---
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7eff8a,100:00e5ff&height=100&section=footer" width="100%"/>
+
 *Built with ❤️ for CodeAlpha AI Internship*
+
+</div>
