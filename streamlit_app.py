@@ -425,7 +425,10 @@ if st.session_state.running and st.session_state.detector:
         os.unlink(tfile.name)
 
     elif source_type == "Webcam":
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture("http://192.168.0.100:8080/video")
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         if not cap.isOpened():
             st.error("❌ Webcam not accessible. Try Video File mode instead.")
             st.session_state.running = False
