@@ -24,5 +24,5 @@ while True:
     if cv2.waitKey(1) == 27:  # ESC to quit
         break
 
-cap.release()............................
+cap.release().
 cv2.destroyAllWindows()
